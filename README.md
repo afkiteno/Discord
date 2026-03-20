@@ -14,3 +14,4 @@ Mostly for personal use, backup, and fun projects.
 - `perm.py` – Generates server invite links to provide controlled access to another server.  
 - `specific.py` – A specialized version of `messages.py` for targeted use cases.
 - `scrapeids.py` – Grabs server IDs in a specified format and outputs in json format.
+- `auth.py` – Handles OAuth2 authentication with a user account.
