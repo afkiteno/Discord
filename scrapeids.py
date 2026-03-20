@@ -27,7 +27,7 @@ async def on_ready():
 
     print(f"\nTotal servers found: {len(found_ids)}")
     
-    config['ServerIDs'] = found_ids
+    config['SERVER_IDS'] = found_ids
     with open('config.json', 'w') as f:
         json.dump(config, f, indent=4)
         
