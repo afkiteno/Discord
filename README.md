@@ -13,3 +13,4 @@ Mostly for personal use, backup, and fun projects.
 - `messages.py` – Extracts and displays the main fields from an embed message.  
 - `perm.py` – Generates server invite links to provide controlled access to another server.  
 - `specific.py` – A specialized version of `messages.py` for targeted use cases.
+- `scrapeids.py` – Grabs server IDs in a specified format and outputs in json format.
