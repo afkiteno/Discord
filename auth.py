@@ -33,13 +33,22 @@ def callback():
             "Authorization": f"Bearer {res_data['access_token']}"
         }).json()
         
-        return f"""
-        <h1>Success!</h1>
-        <p><b>User ID:</b> {user_info['id']}</p>
-        <p><b>Access Token:</b> {res_data['access_token']}</p>
-        """
+        config['USER_ID'] = user_info['id']
+        config['ACCESS_TOKEN'] = res_data['access_token']
+        
+        try:
+            with open('config.json', 'w') as f:
+                json.dump(config, f, indent=4)
+            
+            return """
+            <h1>Success!</h1>
+            <p><b>config.json</b> has been updated with the new User ID and Access Token.</p>
+            <p>You can now close this tab.</p>
+            """
+        except Exception as e:
+            return f"<h1>File Error</h1><p>Could not write to config.json: {str(e)}</p>", 500
     else:
-        return f"Error: {res_data}", 400
+        return f"<h1>OAuth Error</h1><p>{res_data}</p>", 400
 
 if __name__ == '__main__':
     app.run(port=5000)
